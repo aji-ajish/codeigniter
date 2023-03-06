@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeigniter/framework',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'ad696e6d4d030fec1078f50e26e774b7cb12c573',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'ff86116c55a592542f26e1554380e01cadb7bb02',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'codeigniter/framework' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'ad696e6d4d030fec1078f50e26e774b7cb12c573',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'ff86116c55a592542f26e1554380e01cadb7bb02',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -47,9 +47,9 @@
             'dev_requirement' => false,
         ),
         'google/apiclient' => array(
-            'pretty_version' => 'v2.12.1',
-            'version' => '2.12.1.0',
-            'reference' => '1530583a711f4414407112c4068464bcbace1c71',
+            'pretty_version' => 'v2.13.0',
+            'version' => '2.13.0.0',
+            'reference' => 'b653a338c5a658adf6df4bb2f44c2cc02fe7eb1d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../google/apiclient',
             'aliases' => array(),
