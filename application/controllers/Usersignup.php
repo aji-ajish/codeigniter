@@ -173,7 +173,7 @@ class Usersignup extends CI_Controller
         $oauth = new Google\Auth\OAuth2($config);
         $oauth->setAccessToken($token['access_token']);
 
-        $service = new Google\Service\Oauth2($google);
+        $service = new Google\Auth\Oauth2($google);
         $user_info = $service->userinfo->get();
         $data['name'] = $user_info->name;
         $data['email'] = $user_info->email;
