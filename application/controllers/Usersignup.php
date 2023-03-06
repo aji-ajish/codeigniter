@@ -1,7 +1,7 @@
 <?php
 
 use Google\Client as GoogleClient;
-use Google\Service\Oauth2;
+use Google\Auth\Oauth2;
 
 class Usersignup extends CI_Controller
 {
@@ -151,31 +151,42 @@ class Usersignup extends CI_Controller
         }
     }
     public function googleLogin()
-    {
-        $google = new GoogleClient();
-        $google->setApplicationName('Ajish google Login');
-        $google->setClientId('275634547791-gkl81l4ogo1mgurc3hsqmh8abjpkkm94.apps.googleusercontent.com');
-        $google->setClientSecret('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');
-        $google->setRedirectUri('http://localhost/php/codeiginater/Usersignup/googleLogin');
-        $google->addScope(['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']);
-        if ($code = $this->input->get('code')) {
-            $token = $google->fetchAccessTokenWithAuthCode($code);
-            $google->setAccessToken($token);
-            $oauth = new Oauth2;
+{
+    $google = new GoogleClient();
+    $google->setApplicationName('Ajish google Login');
+    $google->setClientId('275634547791-gkl81l4ogo1mgurc3hsqmh8abjpkkm94.apps.googleusercontent.com');
+    $google->setClientSecret('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');
+    $google->setRedirectUri('http://localhost/php/codeigniter/Usersignup/googleLogin');
+    $google->addScope(['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']);
 
-            $user_info = $oauth->userinfo->get();
-            $data['name'] = $user_info->name;
-            $data['email'] = $user_info->email;
-            $data['image'] = $user_info->picture;
-            $this->usersignup_model->googlelogin($data);
-            $user = $this->usersignup_model->getuser($user_info->email);
-            $this->session->set_userdata('user', $user);
-            redirect('../Usersignup/dashboard');
-        } else {
+    if ($code = $this->input->get('code')) {
+        $token = $google->fetchAccessTokenWithAuthCode($code);
+        $google->setAccessToken($token);
 
-            $url = $google->createAuthUrl();
+        $config = [
+            'clientId' => '275634547791-gkl81l4ogo1mgurc3hsqmh8abjpkkm94.apps.googleusercontent.com',
+            'clientSecret' => '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',
+            'redirectUri' => 'http://localhost/php/codeigniter/Usersignup/googleLogin',
+            'scope' => ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
+        ];
 
-            header('Location:' . filter_var($url, FILTER_SANITIZE_URL));
-        }
+        $oauth = new Google\Auth\OAuth2($config);
+        $oauth->setAccessToken($token['access_token']);
+
+        $service = new Google\Auth\Oauth2($google);
+        $user_info = $service->userinfo->get();
+        $data['name'] = $user_info->name;
+        $data['email'] = $user_info->email;
+        $data['image'] = $user_info->picture;
+
+        $this->usersignup_model->googlelogin($data);
+        $user = $this->usersignup_model->getuser($user_info->email);
+        $this->session->set_userdata('user', $user);
+        redirect('../Usersignup/dashboard');
+    } else {
+        $url = $google->createAuthUrl();
+        header('Location:' . filter_var($url, FILTER_SANITIZE_URL));
     }
+}
+
 }
