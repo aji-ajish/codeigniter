@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost/sample/codeigniter/';
-$config['base_url'] = 'http://localhost/php/codeiginater/';
+$config['base_url'] = 'http://localhost/php/codeigniter/';
 /*
 |--------------------------------------------------------------------------
 | Index File
