@@ -530,3 +530,7 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+$config['stripe_publishable_key']='pk_test_51MjdhlSENpDQKHxyFEvLyZiw41tJirAacF1PCPB8qScQv8KlzGapTjRVtzjQm1nXeezxSJIxysKcyp8U2XhefAgg00C0Lipecw';
+$config['stripe_secret_key']='sk_test_51MjdhlSENpDQKHxyffx2hC3iX3oaxmPDJtRhzG4OubL2OcBPZH96cmHVbjBBFEmVFgq7h6ZPiYm48QUqE5Cbve7X00OziqH2AZ';
+$config['stripe_currency']='inr';

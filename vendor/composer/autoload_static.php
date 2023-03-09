@@ -32,6 +32,7 @@ class ComposerStaticInit2d11c0e1d7ef349dc6a6e65cb29db2b9
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Stripe\\' => 7,
         ),
         'P' => 
         array (
@@ -86,6 +87,10 @@ class ComposerStaticInit2d11c0e1d7ef349dc6a6e65cb29db2b9
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
         'Psr\\SimpleCache\\' => 
         array (
