@@ -42,6 +42,10 @@
                     <td>7</td>
                     <td><a href="<?= base_url('AutoComplete/') ?>">Auto Complete</a></td>
                 </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="<?= base_url('PaymentGateway/') ?>">Payment Gateway</a></td>
+                </tr>
             </tbody>
         </table>
         <div id="body">

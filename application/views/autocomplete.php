@@ -62,12 +62,13 @@
        },
        getValue:'country_name',
        list:{
-        $("#country").click(function(){
+
+        onSelectItemEvent:function(){
             var id=$("#country").getSelectedItemData().country_id;
             // $(".country").val(id);
 			$("#country").addClass(id);
 
-        })
+        }
        }
     };
     $(document).ready(function(){
