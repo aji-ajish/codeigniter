@@ -46,6 +46,10 @@
                     <td>8</td>
                     <td><a href="<?= base_url('PaymentGateway/') ?>">Payment Gateway</a></td>
                 </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="<?= base_url('Authors/') ?>">Pagination</a></td>
+                </tr>
             </tbody>
         </table>
         <div id="body">

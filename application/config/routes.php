@@ -54,3 +54,4 @@ $route['404_override'] = 'custom404';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['(:num)/api'] = 'Apicall';
+$route['Authors/(:num)'] = 'Authors';
